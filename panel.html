@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Usuario</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style/estilos.css" />
+</head>
+<body>
+  <header>
+    <h1>Tu Panel de Gastos</h1>
+    <p>¡Hola, usuario!</p>
+  </header>
+
+  <main class="panel-container">
+
+    <!-- Registrar transacción -->
+    <section class="card">
+      <h2>Registrar gasto o ingreso</h2>
+      <form>
+        <label for="tipo">Tipo</label>
+        <select id="tipo" name="tipo">
+          <option value="gasto">Gasto</option>
+          <option value="ingreso">Ingreso</option>
+        </select>
+
+        <label for="fecha">Fecha</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="monto">Monto</label>
+        <input type="number" id="monto" name="monto" required>
+
+        <label for="categoria">Categoría</label>
+        <select id="categoria" name="categoria">
+          <option value="comida">Comida</option>
+          <option value="transporte">Transporte</option>
+          <option value="otros">Otros</option>
+        </select>
+
+        <button type="submit" class="btn">Agregar</button>
+      </form>
+    </section>
+
+    <!-- Crear categoría -->
+    <section class="card">
+      <h2>Crear nueva categoría</h2>
+      <form>
+        <label for="nueva-categoria">Nombre</label>
+        <input type="text" id="nueva-categoria" name="nueva-categoria" required>
+        <button type="submit" class="btn">Crear categoría</button>
+      </form>
+    </section>
+
+    <!-- Definir presupuesto -->
+    <section class="card">
+      <h2>Definir presupuesto por categoría</h2>
+      <form>
+        <label for="categoria-presupuesto">Categoría</label>
+        <select id="categoria-presupuesto" name="categoria-presupuesto">
+          <option value="comida">Comida</option>
+          <option value="transporte">Transporte</option>
+        </select>
+
+        <label for="monto-presupuesto">Monto mensual</label>
+        <input type="number" id="monto-presupuesto" name="monto-presupuesto" required>
+
+        <button type="submit" class="btn">Guardar presupuesto</button>
+      </form>
+    </section>
+
+    <!-- Historial -->
+    <section class="card">
+      <h2>Historial de transacciones</h2>
+      <ul class="historial">
+        <li>📉 Gasto en comida: $1200 - 01/05/2025</li>
+        <li>📈 Ingreso salario: $80.000 - 01/05/2025</li>
+        <li>📉 Gasto en transporte: $500 - 02/05/2025</li>
+      </ul>
+    </section>
+
+  </main>
+  <script src="scripts/panel.js"></script>
+</body>
+</html>

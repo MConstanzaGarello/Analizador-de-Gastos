@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar Sesión</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style/estilos.css" />
+</head>
+<body>
+  <main class="form-container">
+    <h2>Iniciar Sesión</h2>
+    <form id="form-login">
+        <label for="correo">Correo electrónico</label>
+      <input type="email" id="correo" name="correo" required />
+
+      <label for="contraseña">Contraseña</label>
+      <input type="password" id="contraseña" name="contraseña" required />
+
+      <button type="submit" class="btn">Entrar</button>
+    </form>
+    <p>¿No tenés cuenta? <a href="crear-cuenta.html">Crear una cuenta</a></p>
+  </main>
+</body>
+<script>
+    document.getElementById("form-login").addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      const correo = document.getElementById("correo").value;
+      const contraseña = document.getElementById("contraseña").value;
+  
+      if (correo !== "" && contraseña !== "") {
+        window.location.href = "panel.html";
+      } else {
+        alert("Por favor, completá todos los campos.");
+      }
+    });
+  </script>
+  
+</html>
